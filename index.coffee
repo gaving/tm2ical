@@ -23,7 +23,7 @@ app.get "/venue/:id", (req, res) ->
       res.send cal.toString()
       res.end()
 
-server = app.listen process.env.PORT || 3000, ->
+server = app.listen process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", ->
   host = server.address().address
   port = server.address().port
   console.log "Listening at http://%s:%s", host, port
