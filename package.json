@@ -1,0 +1,17 @@
+{
+  "name": "tm2ical",
+  "version": "1.0.0",
+  "description": "convert ticketmaster listings to ical format",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.10.1",
+    "icalendar": "^0.7.1",
+    "request": "^2.47.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gavin Gilmour <gavin.gilmour@gmail.com>",
+  "license": "ISC"
+}
