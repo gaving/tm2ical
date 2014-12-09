@@ -5,10 +5,10 @@
   "main": "index.coffee",
   "dependencies": {
     "coffee-script": "^1.8.0",
-    "express": "^4.10.1",
+    "express": "^4.10.4",
     "icalendar": "^0.7.1",
-    "request": "^2.47.0",
-    "string": "^2.2.0"
+    "request": "^2.50.0",
+    "string": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
