@@ -2,17 +2,18 @@
   "name": "tm2ical",
   "version": "1.0.0",
   "description": "convert ticketmaster listings to ical format",
-  "main": "index.coffee",
+  "main": "index.js",
+  "type": "module",
   "dependencies": {
-    "coffee-script": "^1.8.0",
-    "express": "^4.10.6",
+    "express": "^4.16.4",
     "icalendar": "^0.7.1",
-    "request": "^2.51.0",
-    "string": "^3.0.0"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.0",
+    "request": "^2.88.0",
+    "string": "^3.3.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -- --experimental-modules index.js"
   },
   "author": "Gavin Gilmour <gavin.gilmour@gmail.com>",
   "license": "ISC"

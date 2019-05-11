@@ -4,9 +4,10 @@ Convert Ticketmaster listings to iCal format
 
 # Usage
 
-- coffee index.coffee
-- Hit up /venue/:id
+- `yarn && yarn start`
 
-# Todo
+Hit up `/venue` endpoint e.g.
 
-- Take multiple venue ids and return merged calendars
+http://localhost:8080/venue/444745
+
+http://localhost:8080/venue/442873
