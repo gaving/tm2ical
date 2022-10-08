@@ -29,7 +29,7 @@ app.get("/venue/:id", (req, res) => {
       const { response: resp } = JSON.parse(body);
       resp.docs.forEach(i => {
         const event = new ical.VEvent();
-        event.setDate(i.EventDate);
+        event.setDate(i.EventDate, i.EventDate, true);
         event.setDescription(S(i["search-en"]).decodeHTMLEntities().s);
         event.setLocation(i.VenueName);
         event.setSummary(S(i.EventName).decodeHTMLEntities().s);
