@@ -6,7 +6,7 @@
   "type": "module",
   "dependencies": {
     "express": "^4.18.1",
-    "icalendar": "^0.7.1",
+    "icalendar": "https://github.com/gaving/node-icalendar.git",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20",
     "request": "^2.88.2",
