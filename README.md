@@ -4,7 +4,7 @@ Convert Ticketmaster listings to iCal format
 
 # Usage
 
-- `yarn && yarn start`
+- `npm install && npm start`
 
 Hit up `/venue` endpoint e.g.
 
