@@ -1,7 +1,7 @@
 import express from "express";
+import ical from "icalendar";
 import morgan from "morgan";
 import request from "request";
-import ical from "icalendar";
 import S from "string";
 
 const TM_URL = "http://www.ticketmaster.co.uk";
@@ -13,8 +13,8 @@ app.use(morgan("combined"));
 const get = request.defaults({
   headers: {
     "User-Agent":
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
-  }
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+  },
 });
 
 app.get("/venue/:id", (req, res) => {
@@ -27,7 +27,7 @@ app.get("/venue/:id", (req, res) => {
       }
       const cal = new ical.iCalendar();
       const { response: resp } = JSON.parse(body);
-      resp.docs.forEach(i => {
+      for (const i of resp.docs) {
         const event = new ical.VEvent();
         event.setDate(i.EventDate, i.EventDate, true);
         event.setDescription(S(i["search-en"]).decodeHTMLEntities().s);
@@ -35,8 +35,9 @@ app.get("/venue/:id", (req, res) => {
         event.setSummary(S(i.EventName).decodeHTMLEntities().s);
         event.addProperty("GEO", i.VenueLatLong);
         event.addProperty("URL", `${TM_URL}${i.AttractionSEOLink}`);
-        return cal.addComponent(event);
-      });
+        cal.addComponent(event);
+        continue;
+      }
       res.contentType("ics");
       return res.send(cal.toString());
     }
